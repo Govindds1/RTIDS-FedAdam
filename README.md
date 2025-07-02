@@ -1,0 +1,41 @@
+# Real-Time Intrusion Detection System for SDN Optimized by Fed-Adam 
+
+## Overview
+
+**FedAdam-SDNGuard** is an advanced, privacy-preserving cybersecurity threat detection framework for Software-Defined Networking (SDN) environments. Leveraging **federated learning** with the **FedAdam optimizer** and real-time data streaming via **Apache Kafka**, this project enables distributed, collaborative model training and real-time intrusion detection without centralizing sensitive network data.
+
+The system is designed to detect a wide range of attacks—including DDoS, Probe, DoS, BFA, Web-Attack, BOTNET, and U2R—by combining deep learning, distributed systems, and real-time analytics in a scalable, production-ready architecture.
+
+---
+
+## Table of Contents
+
+- [Features](#features)
+- [System Architecture](#system-architecture)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Running the System](#running-the-system)
+- [Project Structure](#project-structure)
+- [Usage](#usage)
+- [Results](#results)
+- [Future Work](#future-work)
+- [References](#references)
+
+---
+
+## Features
+
+- **Federated Learning**: Distributed model training across multiple SDN clients without sharing raw data.
+- **FedAdam Optimization**: Adaptive, momentum-based optimizer for fast and stable federated convergence.
+- **Real-Time Detection**: Kafka-powered streaming for live network traffic simulation and instant threat analysis.
+- **Multi-Class Attack Detection**: Identifies DDoS, Probe, DoS, BFA, Web-Attack, BOTNET, U2R, and Normal traffic.
+- **Privacy-Preserving**: No centralized data collection; only model updates are shared.
+- **Scalable & Modular**: Easily extendable to more clients, new attack types, or additional real-time analytics.
+- **Comprehensive Monitoring**: Enhanced alerting, statistics, and real-time dashboard.
+
+---
+
+## System Architecture
+
