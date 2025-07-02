@@ -2,7 +2,7 @@
 
 ## Overview
 
-**FedAdam-SDNGuard** is an advanced, privacy-preserving cybersecurity threat detection framework for Software-Defined Networking (SDN) environments. Leveraging **federated learning** with the **FedAdam optimizer** and real-time data streaming via **Apache Kafka**, this project enables distributed, collaborative model training and real-time intrusion detection without centralizing sensitive network data.
+**RTIDS-FedAdam** is an advanced, privacy-preserving cybersecurity threat detection framework for Software-Defined Networking (SDN) environments. Leveraging **federated learning** with the **FedAdam optimizer** and real-time data streaming via **Apache Kafka**, this project enables distributed, collaborative model training and real-time intrusion detection without centralizing sensitive network data.
 
 The system is designed to detect a wide range of attacks—including DDoS, Probe, DoS, BFA, Web-Attack, BOTNET, and U2R—by combining deep learning, distributed systems, and real-time analytics in a scalable, production-ready architecture.
 
