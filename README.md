@@ -40,3 +40,37 @@ The system is designed to detect a wide range of attacks—including DDoS, Probe
 ## System Architecture
 
 ![image alt](https://github.com/Govindds1/RTIDS-FedAdam/blob/main/System_Architecture.png?raw=true)
+
+
+---
+
+## Technologies Used
+
+- **Python 3.8+**
+- **PyTorch** (Deep Learning, Federated Learning)
+- **scikit-learn** (Preprocessing, Metrics)
+- **pandas, numpy** (Data Handling)
+- **matplotlib, seaborn** (Visualization)
+- **Apache Kafka** (Real-Time Streaming) [1]
+- **kafka-python** (Kafka Producer/Consumer)
+- **Jupyter Notebook** (Development & Analysis) [2]
+- **VS Code** (Recommended IDE)
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.8 or higher
+- Java 8+ (for Kafka)
+- Apache Kafka 2.8+ (download from [kafka.apache.org](https://kafka.apache.org/downloads))
+- Recommended: 8GB+ RAM, modern CPU, optional CUDA GPU
+
+### Installation
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/Govindds1/RTIDS-FedAdam.git
+   cd RTIDS-FedAdam
+   ```
