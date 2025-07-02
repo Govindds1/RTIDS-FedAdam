@@ -39,13 +39,30 @@ The system is designed to detect a wide range of attacks—including DDoS, Probe
 
 ## System Architecture
 
-+-------------------+ +-------------------+ +--------------------+
-| Data Producer | ---> | Kafka Broker | ---> | Threat Detector |
-| (Simulated/Real) | | (cybersecurity- | | (Consumer + FL) |
-| | | stream topic) | | |
-+-------------------+ +-------------------+ +--------------------+
-| |
-|<------------- Federated Learning ------------------->|
-| (FedAdam Aggregation, Model Updates) |
-v v
-[Multiple SDN Clients] [Real-Time Dashboard]
+```` ```````flowchart TD
+    subgraph Client_Side["Federated Clients (SDN Domains)"]
+        A1[Local Data<br>(Majority.csv/Minority.csv)]
+        A2[Data Preprocessing<br>(Scaling, Encoding)]
+        A3[Local Model Training<br>(CyberSecurityNet)]
+        A4[Model Update<br>(FedAdam Delta)]
+        A1 --> A2 --> A3 --> A4
+    end
+
+    subgraph Kafka_Stream["Real-Time Traffic Simulation"]
+        B1[Kafka Producer<br>(Simulated/Real Traffic)]
+        B2[Kafka Broker<br>(cybersecurity-stream)]
+        B3[Kafka Consumer<br>(Threat Detector)]
+        B1 --> B2 --> B3
+    end
+
+    subgraph Server_Side["Central Server"]
+        C1[Model Aggregation<br>(FedAdam)]
+        C2[Global Model Update]
+        C1 --> C2
+    end
+
+    A4 -- Model Updates --> C1
+    C2 -- Global Model --> A3
+
+    B3 -- Feature Extraction & Prediction --> D1[Real-Time Inference<br>with Global Model]
+    D1 -- Alerts & Metrics --> D2[Dashboard & Monitoring]`````` ```
