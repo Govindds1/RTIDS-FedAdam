@@ -39,3 +39,13 @@ The system is designed to detect a wide range of attacks—including DDoS, Probe
 
 ## System Architecture
 
++-------------------+ +-------------------+ +--------------------+
+| Data Producer | ---> | Kafka Broker | ---> | Threat Detector |
+| (Simulated/Real) | | (cybersecurity- | | (Consumer + FL) |
+| | | stream topic) | | |
++-------------------+ +-------------------+ +--------------------+
+| |
+|<------------- Federated Learning ------------------->|
+| (FedAdam Aggregation, Model Updates) |
+v v
+[Multiple SDN Clients] [Real-Time Dashboard]
