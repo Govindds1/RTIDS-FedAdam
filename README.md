@@ -74,3 +74,94 @@ The system is designed to detect a wide range of attacks—including DDoS, Probe
    git clone https://github.com/Govindds1/RTIDS-FedAdam.git
    cd RTIDS-FedAdam
    ```
+
+2. **Install Python Dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+   
+3. **Download and Setup Kafka**
+- [Download Kafka](https://kafka.apache.org/downloads)
+- Extract and follow [Kafka Quickstart](https://kafka.apache.org/quickstart)
+
+### Running the System
+
+#### 1. **Start Kafka Services**
+Open separate terminals and run:
+- Zookeeper:  
+  `bin/zookeeper-server-start.sh config/zookeeper.properties`
+- Kafka Server:  
+  `bin/kafka-server-start.sh config/server.properties`
+- Create Topic:  
+  `bin/kafka-topics.sh --create --topic cybersecurity-stream --bootstrap-server localhost:9092 --replication-factor 1 --partitions 3`
+
+#### 2. **Train the Federated Model**
+- Open `notebook/main_federated.ipynb` in Jupyter and run all cells, or run the training script if provided.
+
+#### 3. **Start Real-Time Simulation**
+- **Producer**:  
+  `python cybersecurity_producer.py`
+- **Consumer/Detector**:  
+  `python enhanced_consumer.py`
+- **Dashboard (optional)**:  
+  `python dashboard.py`
+
+---
+
+## Project Structure
+
+RTIDS-FedAdam/
+│
+├── data/ # Raw datasets (metasploitable-2.csv, OVS.csv, Normal_data.csv)
+├── output/ # Processed datasets (majority.csv, minority.csv)
+├── federated_learning/ # Core FL modules (models.py, client.py, server.py, utils.py)
+├── notebook/ # Jupyter notebooks for training and analysis
+├── cybersecurity_producer.py # Kafka producer (simulates network traffic)
+├── enhanced_consumer.py # Kafka consumer + FL inference + alerting
+├── dashboard.py # Real-time visualization dashboard
+├── requirements.txt
+└── README.md
+
+
+---
+
+## Usage
+
+- **Federated Learning Training**: Run the notebook to train the model on distributed datasets using FedAdam aggregation.
+- **Real-Time Detection**: Launch the producer and consumer to simulate and analyze live network traffic.
+- **Monitoring**: Use the dashboard for real-time visualization of detected threats and system performance.
+
+---
+
+## Results
+
+- **Global Test Accuracy**: 97.85%
+- **Processing Rate**: ~0.9 messages/second in real-time simulation
+- **Threats Detected**: DDoS, Probe, DoS, BFA, Web-Attack, BOTNET, U2R, Normal
+- **Privacy**: No raw data sharing; only model parameters exchanged
+
+---
+
+## Future Work
+
+- Integration of advanced federated algorithms (FedProx, FedNova)
+- Differential privacy and secure aggregation for enhanced privacy
+- Edge deployment for ultra-low latency detection
+- Multi-modal data fusion (logs, user behavior, etc.)
+- Automated incident response and threat intelligence integration
+
+---
+
+## References
+
+- [Apache Kafka Documentation](https://kafka.apache.org/documentation/)
+- [PyTorch Documentation](https://pytorch.org/docs/stable/index.html)
+- [Federated Learning for Network Attack Detection](https://www.nature.com/articles/s41598-024-70032-2)
+- [See full list in the project report]
+
+---
+
+**RTIDS-FedAdam**  
+*Advanced, privacy-preserving, real-time SDN threat detection powered by federated learning and adaptive optimization.*
+
